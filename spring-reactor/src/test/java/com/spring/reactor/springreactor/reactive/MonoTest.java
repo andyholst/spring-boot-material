@@ -25,4 +25,19 @@ public class MonoTest {
 
         // Then
     }
+
+    @Test
+    void monoWithDoOn() {
+        // Given
+        Mono.just("A")
+                .log()
+                .doOnSubscribe(subscribed -> System.out.println("Subscribed: " + subscribed))
+                .doOnRequest(request -> System.out.println("Request: " + request))
+                .doOnSuccess(complete -> System.out.println("Complete " + complete))
+                .subscribe(System.out::println);
+
+        // When
+
+        // Then
+    }
 }
