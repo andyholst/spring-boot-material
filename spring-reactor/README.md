@@ -6,5 +6,5 @@
 ## Build and execute tests In Docker
 
 ```
-docker -v ${PWD}/usr/src/spring-reactor gradle:jdk17 ./gradlew clean build
+docker run --rm -v ${PWD}:/usr/src/spring-reactor gradle:jdk17 /usr/src/spring-reactor/gradlew clean build
 ```
